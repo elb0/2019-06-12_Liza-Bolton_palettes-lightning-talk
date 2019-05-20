@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>🎶 Don’t cha wish your plot had colours like me? 🎶</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Liza Bolton" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# 🎶 Don’t cha wish your plot had colours like me? 🎶
+## R Ladies ⚡ Talk
+### Liza Bolton
+### The Data Embassy
+### 2019/06/12
+
+---
+
+
+
+
+[🎶 The Pussycat Dolls - Don't Cha ft. Busta Rhymes](https://www.youtube.com/watch?v=YNSxNsr4wmA)
+
+Image credit: [Giphy](https://giphy.com/gifs/nicole-scherzinger-pussycat-dolls-pcd-zHWESnDS3rJXG)
+
+&lt;img src="https://media.giphy.com/media/zHWESnDS3rJXG/giphy.gif" width="700" style="display: block; margin: auto;" /&gt;
+
+---
+# Colour matters!
+
+&lt;img src="images/color-pencils-colored-pencils-colorful-50996.jpg" width="700" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# Why?
+
+---
+
+# Colours can:
+
+--
+
+- .large[influence emotion, which can influence how people understand your data.]
+
+--
+
+- .large[connect to meaning. (Hot and cold? .red[**Red**] and .blue[**blue**].)]
+
+--
+
+- .large[show **more** or .gray[**less**] with intensity/brightness.]
+
+--
+
+- .large[look brighter when bigger/less bright when smaller (think] *paint chip* .large[vs] .extralarge[**wall**].large[).]
+
+--
+&lt;br&gt;&lt;/br&gt;
+
+Good discussion in this [interview with Maureen Stone,](https://www.fastcompany.com/3062182/how-to-use-color-to-prove-your-point-from-a-data-viz-expert) a colour expert with Tableau.
+
+
+---
+
+# What's this talk for?
+
+--
+
+- .large[tips about what to think about when *picking* palettes]
+
+--
+
+- .large[showing some cool/useful palettes]
+
+--
+
+- .large[giving you the basics for making your own palettes]
+
+--
+
+# Assumptions I'm making
+
+-- 
+
+- you are somewhat familiar with `ggplot` and R in general
+
+--
+
+- you don't need heaps of technical info on hex codes and colour theory for this to be fun an useful
+
+---
+# What's in a colour?
+
+--
+
+.large[You're always going to need three pieces of information really understand making a colour in a computer.]
+
+--
+
+.large[But thankfully there are a couple different ways to approach this.]
+
+--
+
+.large[You'll usually see a colour written in one of 4 ways:]
+- Just as a colour name "red" (has to be one R recognises)
+- As a mix of **hue, saturation and lightness** (HSL)
+- As a mix of redness, greenness and blueness (RGB)
+- As 6 numbers with a # at the front eg. #ff0000 (Hex code)
+
+[Useful](https://www.w3schools.com/colors/colors_picker.asp)
+---
+class: inverse, middle, center
+
+# What do you need your colours to do?
+
+---
+class: middle, center
+
+.large[Just look different from each other?]
+
+--
+
+.large[You want a **qualitative palette**.]
+
+---
+
+---
+class: middle, center
+
+.large[Show a range from more to less?]
+
+--
+
+.large[You want a **sequential palette**.]
+
+---
+
+---
+class: middle, center
+
+.large[Contrast around a specific point?]
+
+--
+
+.large[You want a **diverging palette**.]
+
+--
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.small[Thanks to [this Everyday analytics article](https://everydayanalytics.ca/2017/03/when-to-use-sequential-and-diverging-palettes.html) for helping my clarify my thinking on this one.]
+
+---
+
+# Pirate palette
+
+&lt;a href="https://cran.r-project.org/web/packages/yarrr/vignettes/piratepal.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `yarrr`&lt;/button&gt;&lt;/a&gt;
+
+
+```r
+yarrr::piratepal(palette = "all")
+```
+
+&lt;img src="Liza-colours-in-R_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+# Pirate palette
+
+&lt;a href="https://cran.r-project.org/web/packages/yarrr/vignettes/piratepal.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `yarrr`&lt;/button&gt;&lt;/a&gt;
+
+
+```r
+yarrr::piratepal(palette = "southpark", 
+          trans = .5,
+          plot.result = T)
+```
+
+---
+
+&lt;img src="Liza-colours-in-R_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
+
+[Pirate pal vignette](https://cran.r-project.org/web/packages/yarrr/vignettes/piratepal.html)
+
+---
+
+https://edwinth.github.io/blog/paletti/
+[ochRe](https://ropensci.org/blog/2017/11/21/ochre/) h/t @dicook
+[Dutchmasters](https://edwinth.github.io/blog/dutch-masters/)
+Ghibli h/t @jacquietran
+Harry Potter  h/t @annafergusson
+Wes Anderson
+Pirate Palette
+
+[Colour Space](http://colorspace.r-forge.r-project.org/articles/hcl_palettes.html)
+
+Viridis
+RColourBrewer
+ggsci - Scientific Journal inspired palettes (Lancet, but also Tron Legacy)
+R base colours
+[Good examples of these three here](https://www.datanovia.com/en/blog/top-r-color-palettes-to-know-for-great-data-visualization/)
+
+Greyscale in ggplot
+
+sometime you use scale_colour_manual with the values, sometimes you use a special function
+
+---
+# Resources
+
+[Good compilation of resources here](https://blog.prototypr.io/another-post-about-colours-for-data-visualisation-part-3-diy-palettes-bfc8c8bad72f)
+
+[Datawrapper blog with resources too](https://blog.datawrapper.de/colorguide/), including Art Palette Experiment by Google, Movies
+
+ Color Palette Generator by Steven DeGraeve can help make colour palette from a still
+ 
+ Things to think about - which colour do you put next to eachother? [Visual blurring not good](https://datahero.com/blog/2013/08/08/why-color-matters-in-data-visualisation/)
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
