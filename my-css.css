@@ -8,3 +8,13 @@
 body.big {
   font-size: 130%;
 }
+
+.left-code {
+  width: 45%;
+  height: 92%;
+  float: left;
+}
+.right-plot {
+  width: 55%;
+  float: right;
+} 
