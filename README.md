@@ -10,4 +10,4 @@ This folder has all the code that went into making the slides, incase you like a
 
 Thanks to Jacquie Tran [@jacquietran](https://twitter.com/jacquietran) for inspiring me to make Xaringan slides, and of course Yihui for [the package](https://github.com/yihui/xaringan), and [R Ladies Auckland](https://twitter.com/RLadiesAKL) for creating this opportunity.
 
-You're welcome to get in touch with me - [@Liza_Bolton](https://twitter.com/Liza_Bolton)
+You're welcome to get in touch with me - [@Liza_Bolton](https://twitter.com/Liza_Bolton).
