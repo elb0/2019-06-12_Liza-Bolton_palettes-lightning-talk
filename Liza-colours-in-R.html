@@ -75,10 +75,6 @@ Good discussion in this [interview with Maureen Stone,](https://www.fastcompany.
 
 --
 
-- .large[pointing you in the direction of the basics for making your own palettes]
-
---
-
 # Assumptions I'm making
 
 --
@@ -87,7 +83,7 @@ Good discussion in this [interview with Maureen Stone,](https://www.fastcompany.
 
 --
 
-- .large[you don't need heaps of technical info on hex codes and colour theory for this to be fun an useful]
+- .large[you don't need heaps of technical info on hex codes and colour theory for this to be fun and useful]
 
 ---
 # How do you tell computers about colours?
@@ -103,6 +99,7 @@ Good discussion in this [interview with Maureen Stone,](https://www.fastcompany.
 - As 6 numbers/letters with a # at the front eg. #ff0000 (**Hex code**)]
 
 [Useful colour tool](https://www.w3schools.com/colors/colors_picker.asp)
+
 [Chrome extension for picking colours from webpages](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp/related?hl=en)
 
 ---
@@ -493,8 +490,10 @@ ggplot(subset(diamonds, carat &gt;= 2.2),
   geom_smooth(method = "loess", 
               alpha = 0.05, size = 1, span = 1) +
   theme_dark() + theme(
-    panel.background = element_rect(fill = "#2D2D2D"),
-    legend.key = element_rect(fill = "#2D2D2D")) +
+    panel.background = 
+      element_rect(fill = "#2D2D2D"),
+    legend.key = 
+      element_rect(fill = "#2D2D2D")) +
   scale_fill_tron()
 ```
 ]
@@ -505,9 +504,10 @@ ggplot(subset(diamonds, carat &gt;= 2.2),
 
 ---
 # Accessibility resources
-[How to design for colour blindness](https://usabilla.com/blog/how-to-design-for-color-blindness/) with a great link to a [colour blindness simulator](http://www.color-blindness.com/coblis-color-blindness-simulator/)
 
-&lt;a href="https://cran.r-project.org/web/packages/yarrr/vignettes/piratepal.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `dichromat`&lt;/button&gt;&lt;/a&gt; - Collapse red-green or green-blue distinctions to simulate the effects of different types of color-blindness.
+- [How to design for colour blindness](https://usabilla.com/blog/how-to-design-for-color-blindness/) with a great link to a [colour blindness simulator](http://www.color-blindness.com/coblis-color-blindness-simulator/)
+
+- &lt;a href="https://cran.r-project.org/web/packages/dichromat/dichromat.pdf" target="_blank"&gt;&lt;button class="button"&gt;📦 `dichromat`&lt;/button&gt;&lt;/a&gt; - Collapse red-green or green-blue distinctions to simulate the effects of different types of color-blindness.
 
 ---
 # Other resources and lists of resources
@@ -518,15 +518,15 @@ ggplot(subset(diamonds, carat &gt;= 2.2),
 
 - [Datawrapper blog with resources too](https://blog.datawrapper.de/colorguide/), including Art Palette Experiment by Google, Movies
 
-- [Colour Space package has lots of great information and palette options](http://colorspace.r-forge.r-project.org/articles/hcl_palettes.html)
+- &lt;a href="http://colorspace.r-forge.r-project.org/articles/hcl_palettes.html" target="_blank"&gt;&lt;button class="button"&gt;📦 `colorspace`&lt;/button&gt;&lt;/a&gt; - The Colour Space package has lots of great information and palette options.
 
--[greyscale functionality in ggplot is pretty good](https://ggplot2.tidyverse.org/reference/scale_grey.html)
+- [Greyscale functionality in ggplot is pretty good](https://ggplot2.tidyverse.org/reference/scale_grey.html)
 
 - [Datanovia list of R palettes to know](https://www.datanovia.com/en/blog/top-r-color-palettes-to-know-for-great-data-visualization/)
 
 - [This Color Palette Generator by Steven DeGraeve can help make colour palette from an image](https://www.degraeve.com/color-palette/)
  
--Things to think about - which colours do you put next to each other? [Visual blurring not good](https://datahero.com/blog/2013/08/08/why-color-matters-in-data-visualisation/)
+- Things to think about - which colours do you put next to each other? [Visual blurring is not good](https://datahero.com/blog/2013/08/08/why-color-matters-in-data-visualisation/)
 
 ---
 
