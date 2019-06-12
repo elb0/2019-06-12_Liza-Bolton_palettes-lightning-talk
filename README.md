@@ -1,5 +1,5 @@
 # Don't cha wish your ggplot has colours like me?
-## Liza Bolton
+**By Liza Bolton**
 
 *This talk was given on 2019-06-12, at Xero, Auckland for an R Ladies Meetup.*
 
